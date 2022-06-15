@@ -1,0 +1,6 @@
+[book]
+authors = ["Drew De Ponte"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Git Patch Stack Book"
