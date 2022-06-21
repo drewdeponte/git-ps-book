@@ -7,7 +7,7 @@
 	- [Design Principles]()
 	- [Basic Usage]()
 	- [Hooks](./tool/hooks.md)
-	- [Configuration]()
+	- [Configuration](./tool/configuration.md)
 	- [Command Docs]()
 	- [Stuck on Feature Branches]()
 	- [Change is Hard]()

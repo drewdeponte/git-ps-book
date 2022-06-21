@@ -1,0 +1,30 @@
+# Configuration
+
+Git Patch Stack supports various settings via three layers of configuration
+files.
+
+- **personal global settings** - `~/.config/git-ps/config.toml` - intended to allow you to define default personal settings for when a repository doesn't specify a setting
+- **personal repository settings** - `repo_root/.git/git-ps/config.toml` - intended to allow you to define personal settings constrained to a repository. *Note:* Settings defined in here **override** any values defined in the **personal global settings**.
+- **communal repository settings** - `repo_root/.git-ps/config.toml` intended to allow a team to enforce settings for everyone working on a repository. *Note:* Settings defined in here **override** any values defined in the **personal repository settings** or in the **personal global settings**.
+
+The following is an example of a config defining all of the settings. All sections and settings are optional so you don't need to specify them all in each config.
+
+```
+[pull]
+show_list_post_pull = false
+
+[request_review]
+verify_isolation = true
+
+[integrate]
+verify_isolation = true
+prompt_for_reassurance = true
+```
+
+The following is a breakdown of the supported settings.
+
+- `pull.show_list_post_pull` - (**true**/**false** default: **false**) - controls whether the `pull` command will show the patch list after successfully pulling
+- `request_review.verify_isolation` - (**true**/**false** default: **true**) - if **yes** the `request-review` command will run the `isolate` command & it's hooks to verify the patch is isolated prior to requesting review. If the isolation verification fails it errors preventing you from requesting review.
+- `integrate.verify_isolation` - (**true**/**false** default: **true**) - if **yes** the `integrate` command will run the `isolate` command & it's hooks to verify the patch is isolated prior to integrating it. If the isolation verification fails it errors preventing you from integrating the patch.
+- `integrate.prompt_for_reassurance` - (**true**/**false** default: **true**) - if **yes** the `integrate` command will present the user with the patch details and prompt the user asking them if they are sure they want to integrate the patch. If they say yes, then it moves on the with integration. If not it aborts the integration.
+
