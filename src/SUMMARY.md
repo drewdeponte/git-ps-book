@@ -5,6 +5,7 @@
 - [Conceptual Model](./the-concept.md)
 - [Tool]()
 	- [Design Principles]()
+	- [Installation](./tool/installation.md)
 	- [Basic Usage]()
 	- [Hooks](./tool/hooks.md)
 	- [Configuration](./tool/configuration.md)
