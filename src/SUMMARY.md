@@ -9,7 +9,7 @@
 	- [Hooks](./tool/hooks.md)
 	- [Configuration](./tool/configuration.md)
 	- [Basic Usage]()
-	- [Command Docs]()
+	- [Command Docs](./tool/command-docs.md)
 	- [Stuck on Feature Branches]()
 	- [Change is Hard]()
 - [Methodology]()
