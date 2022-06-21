@@ -3,7 +3,7 @@
 [Introduction](./introduction.md)
 
 - [Conceptual Model](./conceptual-model.md)
-- [Tool]()
+- [Tool](./tool.md)
 	- [Design Principles](./tool/design-principles.md)
 	- [Installation](./tool/installation.md)
 	- [Hooks](./tool/hooks.md)
