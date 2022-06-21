@@ -8,7 +8,7 @@
 	- [Installation](./tool/installation.md)
 	- [Hooks](./tool/hooks.md)
 	- [Configuration](./tool/configuration.md)
-	- [Basic Usage]()
+	- [Basic Usage](./tool/basic-usage.md)
 	- [Command Docs](./tool/command-docs.md)
 	- [Stuck on Feature Branches]()
 	- [Change is Hard]()
