@@ -2,7 +2,7 @@
 
 [Introduction](./introduction.md)
 
-- [Conceptual Model](./the-concept.md)
+- [Conceptual Model](./conceptual-model.md)
 - [Tool]()
 	- [Design Principles]()
 	- [Installation](./tool/installation.md)
