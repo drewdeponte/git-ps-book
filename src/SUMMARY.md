@@ -4,7 +4,7 @@
 
 - [Conceptual Model](./conceptual-model.md)
 - [Tool]()
-	- [Design Principles]()
+	- [Design Principles](./tool/design-principles.md)
 	- [Installation](./tool/installation.md)
 	- [Hooks](./tool/hooks.md)
 	- [Configuration](./tool/configuration.md)
