@@ -6,7 +6,7 @@
 - [Tool]()
 	- [Design Principles]()
 	- [Basic Usage]()
-	- [Hooks]()
+	- [Hooks](./tool/hooks.md)
 	- [Configuration]()
 	- [Command Docs]()
 	- [Stuck on Feature Branches]()
