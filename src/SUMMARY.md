@@ -10,7 +10,7 @@
 	- [Configuration](./tool/configuration.md)
 	- [Basic Usage](./tool/basic-usage.md)
 	- [Command Docs](./tool/command-docs.md)
-	- [Stuck on Feature Branches]()
+	- [Stuck on Feature Branches](./tool/stuck-on-feature-branches.md)
 	- [Change is Hard]()
 - [Methodology]()
 	- [Design Principles]()
