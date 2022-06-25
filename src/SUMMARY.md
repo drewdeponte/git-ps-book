@@ -12,23 +12,22 @@
 	- [Command Docs](./tool/command-docs.md)
 	- [Stuck on Feature Branches](./tool/stuck-on-feature-branches.md)
 	- [Change is Hard](./tool/change-is-hard.md)
+- [Guides](./guides.md)
+	- [Create patch on top of stack]()
+	- [Pull patches down from upstream]()
+	- [Combine multiple patches into a singular patch]()
+	- [Reorder patches]()
+	- [Edit a patch in the middle of the stack]()
+	- [Split a patch up into multiple patches]()
+	- [Drop a patch]()
+	- [Request Review of a patch]()
+	- [Integrate a patch]()
+	- [Creating a new Stack]()
 - [Methodology]()
 	- [Design Principles]()
 	- [Patch Characteristics]()
 	- [Workflow]()
 
-# Guides
-
-- [Create a patch on top of stack]()
-- [Pull patches down from upstream]()
-- [Combine multiple patches into a singular patch]()
-- [Reorder patches]()
-- [Edit a patch in the middle of the stack]()
-- [Split a patch up into multiple patches]()
-- [Drop a patch]()
-- [Request Review of a patch]()
-- [Integrate a patch]()
-- [Creating a new Stack]()
 
 # Appendix
 
