@@ -13,7 +13,7 @@
 	- [Stuck on Feature Branches](./tool/stuck-on-feature-branches.md)
 	- [Change is Hard](./tool/change-is-hard.md)
 - [Guides](./guides.md)
-	- [Create patch on top of stack]()
+	- [Add patches to your stack](./guides/add-patches-to-your-stack.md)
 	- [Pull patches down from upstream]()
 	- [Combine multiple patches into a singular patch]()
 	- [Reorder patches]()
