@@ -14,7 +14,7 @@
 	- [Change is Hard](./tool/change-is-hard.md)
 - [Guides](./guides.md)
 	- [Add patches to your stack](./guides/add-patches-to-your-stack.md)
-	- [List patchs on your stack]()
+	- [List patchs on your stack](./guides/list-patches-on-your-stack.md)
 	- [Pull patches down from upstream]()
 	- [Combine multiple patches into a singular patch]()
 	- [Reorder patches]()
