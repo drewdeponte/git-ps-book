@@ -1,9 +1,10 @@
 # List patchs on your stack
 
+How to list patches on your stack and their associated state information.
+
 ## TLDR
 
-1. List patches and their associated state information with `gps list` or `gps
-   ls` for short
+1. `gps list` or `gps ls` for short
 
 ## Walkthrough
 
