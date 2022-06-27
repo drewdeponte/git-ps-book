@@ -30,7 +30,7 @@
 	- [Design Principles]()
 	- [Patch Characteristics]()
 	- [Workflow]()
-
+- [Let's Talk](./lets-talk.md)
 
 # Appendix
 
