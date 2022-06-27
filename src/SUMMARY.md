@@ -16,14 +16,16 @@
 	- [Add patches to your stack](./guides/add-patches-to-your-stack.md)
 	- [List patchs on your stack](./guides/list-patches-on-your-stack.md)
 	- [Pull patches down from upstream]()
-	- [Combine multiple patches into a singular patch]()
 	- [Reorder patches]()
-	- [Edit a patch in the middle of the stack]()
-	- [Split a patch up into multiple patches]()
 	- [Drop a patch]()
+	- [Edit a patch in the middle of the stack]()
+	- [Combine multiple patches into a singular patch]()
+	- [Split a patch up into multiple patches]()
 	- [Request Review of a patch]()
 	- [Integrate a patch]()
 	- [Creating a new Stack]()
+	- [Switch to a different Stack]()
+	- [Delete a Stack]()
 - [Methodology]()
 	- [Design Principles]()
 	- [Patch Characteristics]()
@@ -32,4 +34,4 @@
 
 # Appendix
 
-- [Diff Stacking]()
+- [Diff Stacking](./diff-stacking.md)
