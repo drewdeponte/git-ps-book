@@ -15,7 +15,7 @@
 - [Guides](./guides.md)
 	- [Add patches to your stack](./guides/add-patches-to-your-stack.md)
 	- [List patchs on your stack](./guides/list-patches-on-your-stack.md)
-	- [Pull patches down from upstream]()
+	- [Pull integrated patches down](./guides/pull-integrated-patches-down.md)
 	- [Reorder patches]()
 	- [Drop a patch]()
 	- [Edit a patch in the middle of the stack]()
