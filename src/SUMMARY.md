@@ -17,7 +17,7 @@
 	- [List patchs on your stack](./guides/list-patches-on-your-stack.md)
 	- [Pull integrated patches down](./guides/pull-integrated-patches-down.md)
 	- [Reorder patches](./guides/reorder-patches.md)
-	- [Drop a patch]()
+	- [Drop a patch](./guides/drop-a-patch.md)
 	- [Edit a patch in the middle of the stack]()
 	- [Combine multiple patches into a singular patch]()
 	- [Split a patch up into multiple patches]()
