@@ -19,7 +19,7 @@
 	- [Reorder patches](./guides/reorder-patches.md)
 	- [Drop a patch](./guides/drop-a-patch.md)
 	- [Edit a patch]()
-	- [Combine multiple patches]()
+	- [Combine multiple patches](./guides/combine-multiple-patches.md)
 	- [Split a patch up](./guides/split-a-patch-up.md)
 	- [Request Review of a patch]()
 	- [Integrate a patch]()
