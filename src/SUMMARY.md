@@ -20,7 +20,7 @@
 	- [Drop a patch](./guides/drop-a-patch.md)
 	- [Edit a patch]()
 	- [Combine multiple patches]()
-	- [Split a patch up]()
+	- [Split a patch up](./guides/split-a-patch-up.md)
 	- [Request Review of a patch]()
 	- [Integrate a patch]()
 	- [Creating a new Stack]()
