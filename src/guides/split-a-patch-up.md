@@ -16,9 +16,9 @@ relationship between the various elements.
 
 So lets get to it.
 
-## TLDR
+## TL;DR
 
-For those who just want a quick reminder reference here is the TLDR. For those
+For those who just want a quick reminder reference here is the TL;DR. For those
 who need a bit more context and detail through the walk through read the
 sections below.
 
@@ -309,7 +309,7 @@ want to do a soft reset. So we do the following:
 git reset HEAD^
 ```
 
-Now if we run `git diff` to see the now local ustagged changes we see the
+Now if we run `git diff` to see the now local unstaged changes we see the
 following.
 
 ```

@@ -28,7 +28,7 @@ The following is a list of currently supported hooks and their expected
 filenames.
 
 - `request_review_post_sync` - hook executed by `request-review` command after
-	succesfully syncing the patch to remote - generally used to create a pull
+	successfully syncing the patch to remote - generally used to create a pull
 	request / patch email & send it - **Note: This hook is required to be able
 	to use the `request-review` command.**
 - `isolate_post_checkout` - hook executed by `isolate` command after

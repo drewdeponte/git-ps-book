@@ -33,9 +33,9 @@ significant chunk of benefits tied to the Methodology.
 ## Stage 3
 
 Hopefully after living in Stage 2 for a while you have seen more value and
-realize that there is an extremly valuable Methodology out there that can help
+realize that there is an extremely valuable Methodology out there that can help
 you understand how best to think through breaking down a problem into small
-logical ideally indepent patches. So you read the documentation around the
+logical ideally independent patches. So you read the documentation around the
 Methodology and start applying the practices to your work with Git Patch Stack
 unlocking it's full potential.
 

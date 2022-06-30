@@ -1,11 +1,11 @@
 # Request Review of a patch
 
-## TLDR
+## TL;DR
 
 1. `gps ls` - list out patches in patch stack to the patch index you want to request review of
 2. `gps rr <patch-index>` - request review of the patch identified by the given patch-index
 
-## Walkthrough
+## WalkThrough
 
 ### Get Patch Index
 
@@ -22,7 +22,7 @@ associated indices and statuses. An example of this looks as follows.
 
 ### Request Review
 
-In the example above lets say we wanted to request review of teh "Add function
+In the example above lets say we wanted to request review of the "Add function
 A & function B" patch. We look and it's associated index is `0`. Therefore to
 request review of this patch we simply run the following.
 
@@ -45,7 +45,7 @@ based on the upstream base and the patch is cherry-picked into this branch.
 This verifies that at least from a Git perspective the patch is independent
 enough to successfully be cherry-picked on top of the upstream base.
 
-This however does not verify the patch is truly indendent because it doesn't
+This however does not verify the patch is truly independent because it doesn't
 address code dependencies. To address this the Isolation Verification process
 supports the `isolate_post_checkout` hook. This is a hook that if present gets
 executed after cherry-picking the patch into the temporary branch and checking
@@ -56,7 +56,7 @@ found in the [Tool - Hooks chapter](../tool/hooks.md).
 
 #### Request Review Branch Creation & Sync
 
-Assuming that the isolaction verification is successful it then moves onto
+Assuming that the isolation verification is successful it then moves onto
 creating the request review branch (e.g. `ps/rr/some-patch-summary`) based on
 the upstream base, cherry-picking the patch into it, and then syncing that
 branch with the remote.
@@ -75,7 +75,7 @@ patch email and send it to a mailing list so that all you have to do is a `gps
 rr <patch-index>` and it will take care of the entirety of requesting review of
 that patch.
 
-### Update a previosly Requested Review
+### Update a previously Requested Review
 
 Generally when you request review of a patch you end up getting some feedback
 and need to modify the patch. This is done using all the techniques described

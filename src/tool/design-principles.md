@@ -22,7 +22,7 @@ this we have chosen this design principle to make sure that working in the [conc
 model](../conceptual-model.md) would not only, not feel like overhead, but feel
 even more streamlined than a normal Git workflow.
 
-## Work with existing defact peer review tools
+## Work with existing defacto peer review tools
 
 One of the biggest driving forces for Git Patch Stack was that we wanted a way
 to work within the [conceptual model](../conceptual-model.md) without having to
@@ -41,7 +41,7 @@ able to work inside the [conceptual model](../conceptual-model.md) but if you
 need for some reason to step out of that mental model and use Git itself,
 Git Patch Stack should make that trivial.
 
-## Facilitate the Continous Integration Methodology
+## Facilitate the Continuous Integration Methodology
 
 Last but not least we have chosen the requirement that we must support the
 Continuous Integration Methodology as closely as possible while still

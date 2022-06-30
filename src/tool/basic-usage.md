@@ -37,7 +37,7 @@ Once you have requested review of the patch you wait for feedback and make any
 necessary changes using the same commands as when iterating on it before. Once
 you feel it is once again ready to be reviewed you simply request review for
 the patch again using `gps rr` or `gps request-review`. You continue this
-process until you have addressed all theh issues and the patch has been
+process until you have addressed all the issues and the patch has been
 approved.
 
 ## Integrate the patch

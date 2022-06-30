@@ -1,12 +1,12 @@
-# List patchs on your stack
+# List patches on your stack
 
 How to list patches on your stack and their associated state information.
 
-## TLDR
+## TL;DR
 
 1. `gps list` or `gps ls` for short
 
-## Walkthrough
+## WalkThrough
 
 The `list` command lists out your stack of patches in a format that exposes
 the patch index on the far left followed by the state information, followed by

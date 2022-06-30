@@ -41,7 +41,7 @@ patches**.
 A **patch** is simply a logical change to source code. From a technical
 standpoint a patch is simply a Git commit that exists on your **patch stack**.
 There are ideal characteristics that patches should strive to have. For
-example, being small, logical, buildable, testable, releasable, and having a
+example, being small, logical, build-able, testable, releasable, and having a
 good message. We will get into the specifics of these characteristics later and
 tools and techniques to help facilitate them.
 
