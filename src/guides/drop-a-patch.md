@@ -2,16 +2,16 @@
 
 As we develop software sometimes we come up with ideas that we pretty quickly
 decide aren't great. We generally want to throw this code away. In Git Patch
-Stack because our patches represent logical changes we do thhis by simply
+Stack because our patches represent logical changes we do this by simply
 dropping a patch out of our stack.
 
-## TLDR
+## TL;DR
 
 1. `gps rebase`
 2. mark the commit we want to drop with `d` or `drop`
 3. save and quit the editor
 
-## Walkthrough
+## WalkThrough
 
 The `gps rebase` command is a convenience function that really runs an
 interactive rebase of the stack on top of it's associated upstream, e.g.
@@ -71,7 +71,7 @@ pick 65a811a Add function C
 To drop the commit we simply mark it for dropping with either `d` or `drop`
 instead of it's default `pick`. If you forget the marking you can always
 reference the comment Git includes in the interactive rebase buffer. So in this
-case we mark theh "Add function B" commit with `d` as follows.
+case we mark the "Add function B" commit with `d` as follows.
 
 *Note:* The stack is inverted when presented in an interactive rebase. So the
 bottom most commit on the stack is actually the top most commit. This can be

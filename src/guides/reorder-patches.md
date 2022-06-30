@@ -6,13 +6,13 @@ state where they are ready for review. As we iterate on various patches it is
 crucial to be able to reorder the patches on your stack so that the
 dependencies can be moved to the bottom of the stack.
 
-## TLDR
+## TL;DR
 
 1. `gps rebase`
 2. reorder the commit lines presented, in your configured editor, into the order you want them
 3. save and quit the editor
 
-## Walkthrough
+## WalkThrough
 
 The `gps rebase` command is a convenience function that really runs an
 interactive rebase of the stack on top of it's associated upstream, e.g.

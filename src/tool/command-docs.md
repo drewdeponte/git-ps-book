@@ -1,7 +1,7 @@
 # Command Docs
 
 The Git Patch Stack command line tool has integrated help for the command
-itself as well as all of it's subcomamnds.
+itself as well as all of it's subcommands.
 
 You can get a full breakdown of all the commands by running
 

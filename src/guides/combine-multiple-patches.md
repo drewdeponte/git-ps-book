@@ -3,7 +3,7 @@
 Sometimes you decide that two separate patches should really be collapsed into
 one to make a complete logical change.
 
-## TLDR
+## TL;DR
 
 For those who just need a quick reference as a reminder you can do the
 following.
@@ -13,7 +13,7 @@ following.
   `fixup` in the interactive rebase buffer
 - save the buffer and quit the editor
 
-## Walkthrough
+## WalkThrough
 
 The `gps rebase` command is a convenience function that really runs an
 interactive rebase of the stack on top of it's associated upstream, e.g.
@@ -76,7 +76,7 @@ pick 1d16f98 Add function C
 To combine a patch with the patch above it we simply mark it for `squash` or
 `fixup` instead of it's default `pick`. If you forget the marking you can always
 reference the comment Git includes in the interactive rebase buffer. So in this
-case we mark theh "Add function B" patch with `squash` as follows.
+case we mark the "Add function B" patch with `squash` as follows.
 
 *Note:* The stack is inverted when presented in an interactive rebase. So the
 bottom most commit on the stack is actually the top most commit. This can be
@@ -134,7 +134,7 @@ state your patches are in on, or the other, or both might have `ps-id`'s in
 their commit message. The `ps-id` in the commit message is how Git Patch Stack
 uniquely identifies patches and tracks and associates state to them.
 
-If you are in a situation where only one of the pathes involved has a `ps-id`
+If you are in a situation where only one of the patches involved has a `ps-id`
 you will likely want to keep that `ps-id` in the resulting combined patch's
 commit message.
 

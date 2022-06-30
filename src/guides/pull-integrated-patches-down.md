@@ -3,7 +3,7 @@
 In this guide we're going to focus on how to pull down integrated patches from
 upstream and have your stack replayed on top of the pulled patches.
 
-## TLDR
+## TL;DR
 
 1. `gps pull`
 2. if conflict, resolve it
@@ -11,15 +11,15 @@ upstream and have your stack replayed on top of the pulled patches.
 4. if conflict, `gps rebase --continue`
 5. repeat steps 2 to 4 for each conflicting patch
 
-## Walkthrough
+## WalkThrough
 
-The TLDR section makes this feel trivial. And generally it is pretty trivial as you
+The TL;DR section makes this feel trivial. And generally it is pretty trivial as you
 simply run `gps pull`, which effectively runs a `git fetch` to update your local
 repositories knowledge of the upstream repository's Git tree followed by a
 `git rebase --onto <upstream-branch-name> <upstream-branch-name> <head-branch-shortname>`
 , e.g. `git rebase --onto origin/main origin/main main`.
 
-Conflicts occuring during the rebase are what might catch you off guard the
+Conflicts occurring during the rebase are what might catch you off guard the
 first time. Here in your stack is exactly where you want to be confronted with
 and resolve any conflicts though. It forces you to integrate the upstream
 branch's changes with your stack more often and with smaller increments
@@ -46,8 +46,8 @@ effectively lifts up your stack of patches and plays them back one by one on
 top of the upstream branch (e.g. `origin/main`). This is important because
 conflicts are risen at the commit level. This means as it is going through
 and replaying each commit on top of one another it is checking if there is a
-conflict or not. If there isn't a conflict then it applys that commit cleanly
-and moves on to playing the next commit in the stack. If there is a confict it
+conflict or not. If there isn't a conflict then it applies that commit cleanly
+and moves on to playing the next commit in the stack. If there is a conflict it
 pauses the rebase and leaves you in a working state with the conflict present.
 
 You tactically resolve this the same way you would any conflict. However, you

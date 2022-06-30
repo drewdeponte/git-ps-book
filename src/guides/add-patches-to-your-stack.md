@@ -3,16 +3,16 @@
 We're going to focus on how we create patches on our stack and what a
 stack is in terms of `git`?
 
-## TLDR
+## TL;DR
 
-A stack is simply a branch with an uptream, e.g. `main` with an upstream of
+A stack is simply a branch with an upstream, e.g. `main` with an upstream of
 `origin/main`. You can create a patch on top of your stack with the following.
 
 1. Make a change locally in your editor of choice
 2. Stage your change with `gps add -p`
 3. Create patch with `gps c`
 
-## Walkthrough
+## WalkThrough
 
 Git Patch Stack is really just a layer of
 tooling built directly on top of `git`. So if we look at our `git` tree
@@ -29,7 +29,7 @@ repository for this.
 
 Technically, in Git Patch Stack terms, any branch that has an upstream is
 a Patch Stack. So you can have as many of these Patch Stacks as you want, as long
-as they are branches that have remote upstreams. To add patches on to a stack,
+as they are branches that have a remote upstream. To add patches on to a stack,
 you first have to be checked out on a branch that has an associated upstream.
 In our case, `main`.
 
@@ -156,7 +156,7 @@ fn bar() {
 ```
 
 Now we just `gps add`, `git dc` to verify our staged code. All looks good. We
-create another patchh using `gps c` and enter the message.
+create another patch using `gps c` and enter the message.
 
 ```
 Add bar() function
@@ -169,7 +169,7 @@ Now we should have two patches in our stack.
 ![](../images/guides/add-patch/two-patches-on-stack.png)
 
 We have patches zero, which is the index of the "Add foo() function" patch. And we have
-patch one which is the index of thhe "Add bar() function" patch.
+patch one which is the index of the "Add bar() function" patch.
 
 The short SHA of these patches, a.k.a. commits, is visible to the right of the
 index and status space. We can also see the patch summaries to the right of the

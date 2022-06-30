@@ -1,6 +1,6 @@
 # Stuck on Feature Branches
 
-Sometimes you are in a situtaion where you are stuck with Feature Branches.
+Sometimes you are in a situation where you are stuck with Feature Branches.
 This could be because your team hasn't made the glorious switch over to Git
 Patch Stack yet. Or it could be you are dropping in as a consultant to help a
 team out with something. Or maybe you are working on a team that has a bunch of
