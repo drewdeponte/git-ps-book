@@ -18,7 +18,7 @@
 	- [Pull integrated patches down](./guides/pull-integrated-patches-down.md)
 	- [Reorder patches](./guides/reorder-patches.md)
 	- [Drop a patch](./guides/drop-a-patch.md)
-	- [Add a patch in the middle]()
+	- [Add a patch in the middle](./guides/add-patch-in-the-middle.md)
 	- [Amend a patch]()
 	- [Edit a patch]()
 	- [Combine multiple patches](./guides/combine-multiple-patches.md)
