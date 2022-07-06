@@ -19,7 +19,7 @@
 	- [Reorder patches](./guides/reorder-patches.md)
 	- [Drop a patch](./guides/drop-a-patch.md)
 	- [Add a patch in the middle](./guides/add-patch-in-the-middle.md)
-	- [Amend a patch]()
+	- [Amend a patch](./guides/amend-a-patch.md)
 	- [Edit a patch]()
 	- [Combine multiple patches](./guides/combine-multiple-patches.md)
 	- [Split a patch up](./guides/split-a-patch-up.md)
