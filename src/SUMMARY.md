@@ -23,7 +23,7 @@
 	- [Combine multiple patches](./guides/combine-multiple-patches.md)
 	- [Split a patch up](./guides/split-a-patch-up.md)
 	- [Request Review of a patch](./guides/request-review.md)
-	- [Integrate a patch]()
+	- [Integrate a patch](./guides/integrate-a-patch.md)
 - [Methodology]()
 	- [Design Principles]()
 	- [Patch Characteristics]()
