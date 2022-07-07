@@ -1,4 +1,4 @@
-# Amend a patch
+# Edit a patch
 
 Given that part of Git Patch Stack is iterating on patches you will likely need
 to modify an existing patch. One common way of modifying an existing patch is
