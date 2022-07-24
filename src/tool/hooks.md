@@ -43,6 +43,9 @@ filenames.
 	successfully pushing the patch up to the patch stacks upstream remote.
 	This is especially useful when you need to run something after a patch
 	has been successfully integrated but before cleanup.
+- `list_additional_info` - hook executed by `list` command for each patch in
+  the stack. Adds a column with the output of the hook script. Could be used,
+	for example, to add information from the remote (for example, PR status on github).
 
 You can find examples of hooks that you can straight up use or just use as a
 starting point in [example_hooks](https://github.com/uptech/git-ps-rs/tree/main/example_hooks).
