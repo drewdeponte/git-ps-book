@@ -23,6 +23,9 @@ pull_after_integrate = false
 
 [fetch]
 show_upstream_patches_after_fetch = true
+
+[list]
+extra_patch_info_length = 10
 ```
 
 The following is a breakdown of the supported settings.
@@ -33,4 +36,5 @@ The following is a breakdown of the supported settings.
 - `integrate.prompt_for_reassurance` - (**true**/**false** default: **true**) - if **true** the `integrate` command will present the user with the patch details and prompt the user asking them if they are sure they want to integrate the patch. If they say yes, then it moves on the with integration. If not it aborts the integration.
 - `integrate.pull_after_integrate` - (**true**/**false** default: **false**) - if **true** the `integrate` command will `pull` after a successful integration.
 - `fetch.show_upstream_patches_after_fetch` - (**true**/**false** default: **true**) - if **true** the `fetch` command will show the upstream patches that were fetched.
+- `list.extra_patch_info_length` - (**integer** default: **10**) - the width of the additional information column in the output of `gps list`. If the output is longer it will get truncated. See [Hooks](./tool/hooks.md) for more details.
 
