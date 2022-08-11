@@ -34,6 +34,11 @@ filenames.
 - `isolate_post_checkout` - hook executed by `isolate` command after
 	successfully creating the temporary branch, cherry-picking the patch to it,
 	and checking the branch out
+- `isolate_post_cleanup` - hook executed by `isolate` command after doing it's
+	cleanup, checking out stack you were on prior to isolate and deleting the
+	`ps/tmp/isolate` branch. The isolate cleanup process is triggered
+	automatically when run via `request-review` or `integrate` commands but can
+	also be triggered by running `gps isolate` with no patch index.
 
 You can find examples of hooks that you can straight up use or just use as a
 starting point in [example_hooks](https://github.com/uptech/git-ps-rs/tree/main/example_hooks).
