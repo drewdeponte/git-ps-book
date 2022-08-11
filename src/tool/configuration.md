@@ -20,13 +20,17 @@ verify_isolation = true
 verify_isolation = true
 prompt_for_reassurance = true
 pull_after_integrate = false
+
+[fetch]
+show_upstream_patches_after_fetch = true
 ```
 
 The following is a breakdown of the supported settings.
 
 - `pull.show_list_post_pull` - (**true**/**false** default: **false**) - controls whether the `pull` command will show the patch list after successfully pulling
-- `request_review.verify_isolation` - (**true**/**false** default: **true**) - if **yes** the `request-review` command will run the `isolate` command & it's hooks to verify the patch is isolated prior to requesting review. If the isolation verification fails it errors preventing you from requesting review.
-- `integrate.verify_isolation` - (**true**/**false** default: **true**) - if **yes** the `integrate` command will run the `isolate` command & it's hooks to verify the patch is isolated prior to integrating it. If the isolation verification fails it errors preventing you from integrating the patch.
-- `integrate.prompt_for_reassurance` - (**true**/**false** default: **true**) - if **yes** the `integrate` command will present the user with the patch details and prompt the user asking them if they are sure they want to integrate the patch. If they say yes, then it moves on the with integration. If not it aborts the integration.
-- `integrate.pull_after_integrate` - (**true**/**false** default: **false**) - if **yes** the `integrate` command will `pull` after a successful integration.
+- `request_review.verify_isolation` - (**true**/**false** default: **true**) - if **true** the `request-review` command will run the `isolate` command & it's hooks to verify the patch is isolated prior to requesting review. If the isolation verification fails it errors preventing you from requesting review.
+- `integrate.verify_isolation` - (**true**/**false** default: **true**) - if **true** the `integrate` command will run the `isolate` command & it's hooks to verify the patch is isolated prior to integrating it. If the isolation verification fails it errors preventing you from integrating the patch.
+- `integrate.prompt_for_reassurance` - (**true**/**false** default: **true**) - if **true** the `integrate` command will present the user with the patch details and prompt the user asking them if they are sure they want to integrate the patch. If they say yes, then it moves on the with integration. If not it aborts the integration.
+- `integrate.pull_after_integrate` - (**true**/**false** default: **false**) - if **true** the `integrate` command will `pull` after a successful integration.
+- `fetch.show_upstream_patches_after_fetch` - (**true**/**false** default: **true**) - if **true** the `fetch` command will show the upstream patches that were fetched.
 
