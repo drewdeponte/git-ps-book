@@ -39,6 +39,10 @@ filenames.
 	`ps/tmp/isolate` branch. The isolate cleanup process is triggered
 	automatically when run via `request-review` or `integrate` commands but can
 	also be triggered by running `gps isolate` with no patch index.
+- `integrate_post_push` - hook executed by `integrate` command after
+	successfully pushing the patch up to the patch stacks upstream remote.
+	This is especially useful when you need to run something after a patch
+	has been successfully integrated but before cleanup.
 
 You can find examples of hooks that you can straight up use or just use as a
 starting point in [example_hooks](https://github.com/uptech/git-ps-rs/tree/main/example_hooks).
