@@ -24,6 +24,10 @@ pull_after_integrate = false
 [fetch]
 show_upstream_patches_after_fetch = true
 
+[branch]
+verify_isolation = true
+push_to_remote = false
+
 [list]
 add_extra_patch_info = false
 extra_patch_info_length = 10
@@ -38,6 +42,8 @@ The following is a breakdown of the supported settings.
 - `integrate.prompt_for_reassurance` - (**true**/**false** default: **true**) - if **true** the `integrate` command will present the user with the patch details and prompt the user asking them if they are sure they want to integrate the patch. If they say yes, then it moves on the with integration. If not it aborts the integration.
 - `integrate.pull_after_integrate` - (**true**/**false** default: **false**) - if **true** the `integrate` command will `pull` after a successful integration.
 - `fetch.show_upstream_patches_after_fetch` - (**true**/**false** default: **true**) - if **true** the `fetch` command will show the upstream patches that were fetched.
+- `branch.verify_isolation` - (**true**/**false** default: **true**) - if **true** the `branch` command will run the `isolate` command & it's hooks to verify the patch(es) are isolated prior to creating and possibly pushing the branch. If the isolation verification fails it errors preventing you from creating the branch.
+- `branch.push_to_remote` - (**true**/**false** default: **false**) - if **true** the `branch` command will push the branch to the remote with the same name automatically. If **false** it will only create the local branch.
 - `list.add_extra_patch_info` - (**true**/**false** default: **false**) - if **true** the `list` command will include extra patch information from the `list_additional_info` hook. See [Hooks](hooks.md) for more details.
 - `list.extra_patch_info_length` - (**integer** default: **10**) - the width of the additional information column in the output of `gps list`. If the output is longer it will get truncated. See [Hooks](hooks.md) for more details.
 - `list.reverse_order` - (**true**/**false** default: **false**) - if set to **true** it will reverse the order in which `gps list` presents the patches in the stack. Some people use this option to make the patch order match the order patches are presented within interactive rebases.

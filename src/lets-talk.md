@@ -1,4 +1,4 @@
-# Lats Talk
+# Let's Talk
 
 We love to chat especially about Git Patch Stack. To facilitate that we support
 getting ahold of us in a number of a different ways.
