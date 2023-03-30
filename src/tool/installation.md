@@ -47,6 +47,7 @@ don't fret. You will just have to make sure you have the following build
 dependencies installed.
 
 - [Rust][] (macOS: `brew install rust`)
+- libgpg, i.e. the gpg-error-config dev tool (Ubuntu: `apt-get install -y libgpg-error-dev`)
 - gpgme (macOS: `brew install gpgme`, Ubuntu: `apt-get install -y libgpgme-dev`)
 
 Once you have the build dependencies installed all you should need to do is
