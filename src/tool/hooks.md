@@ -73,7 +73,7 @@ Then we need to copy the example hook of your choice to the Global Hooks
 Directory and give it execute permissions. This can be done with the following.
 
 ```
-curl -fsSL https://raw.githubusercontent.com/uptech/git-ps-rs/main/example_hooks/request_review_post_sync-github-cli-example --output ~/.config/git-ps/hooks/request_review_post_sync
+curl -fsSL https://raw.githubusercontent.com/uptech/git-ps-rs/main/example_hooks/request_review_post_sync.sample.github-cli --output ~/.config/git-ps/hooks/request_review_post_sync
 chmod u+x ~/.config/git-ps/hooks/request_review_post_sync
 ```
 
