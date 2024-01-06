@@ -39,6 +39,10 @@ filenames.
 	`ps/tmp/isolate` branch. The isolate cleanup process is triggered
 	automatically when run via `request-review` or `integrate` commands but can
 	also be triggered by running `gps isolate` with no patch index.
+- `integrate_verify` - hook executed by `integrate` command after checking to
+	make sure patches match between stack and remote, when **not** forced with
+	`--force/-f`. This is often used to make sure the associated CI checks have
+	passed.
 - `integrate_post_push` - hook executed by `integrate` command after
 	successfully pushing the patch up to the patch stacks upstream remote.
 	This is especially useful when you need to run something after a patch
