@@ -34,7 +34,7 @@ filenames.
 - `isolate_post_checkout` - hook executed by `isolate` command after
 	successfully creating the temporary branch, cherry-picking the patch to it,
 	and checking the branch out
-- `isolate_post_cleanup` - hook executed by `isolate` command after doing it's
+- `isolate_post_cleanup` - hook executed by `isolate` command after doing its
 	cleanup, checking out stack you were on prior to isolate and deleting the
 	`ps/tmp/isolate` branch. The isolate cleanup process is triggered
 	automatically when run via `request-review` or `integrate` commands but can
@@ -49,7 +49,7 @@ filenames.
 	has been successfully integrated but before cleanup.
 - `list_additional_information` - hook executed by `list` command for each patch in
   the stack. Adds a column with the output of the hook script. Could be used,
-	for example, to add information from the remote (for example, PR status on github).
+	for example, to add information from the remote (for example, PR status on GitHub).
 
 You can find examples of hooks that you can straight up use or just use as a
 starting point in [example_hooks](https://github.com/uptech/git-ps-rs/tree/main/example_hooks).
@@ -87,6 +87,6 @@ brew install gh
 gh auth login
 ```
 
-Once you have setup the hook as described above and installed the GitHub CLI
+Once you have set up the hook as described above and installed the GitHub CLI
 and authenticated with it to GitHub. You should be all set. When you run the
 `request-review` it should use the hook to create a pull request of the patch.
