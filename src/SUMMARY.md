@@ -12,6 +12,7 @@
 	- [Command Docs](./tool/command-docs.md)
 	- [Stuck on Feature Branches](./tool/stuck-on-feature-branches.md)
 	- [Change is Hard](./tool/change-is-hard.md)
+	- [Patch Stack Identifier](./tool/patch-stack-identifier.md)
 - [Guides](./guides.md)
 	- [Add patches to your stack](./guides/add-patches-to-your-stack.md)
 	- [List patches on your stack](./guides/list-patches-on-your-stack.md)
