@@ -32,20 +32,26 @@ gps int 0
 
 #### Safety Check
 
-If we tried to integrate this patch with `gps int 0` it would fail because as a
-safety precaution it makes sure that the patch has previously been synced with
-`gps sync` or requested review with `gps rr` and in this example thus far the
-patch hasn't been synced.
+    //     x figure out associated branch
+    //     x verify has associated branch, exit with error
+    //     x check to make sure patches match between stack & remote
+    //     - execute hook to verify PR approval & CI status
 
-This can be overriden with the `-f` option as `gps int -f 0` if you don't want
-to have to sync or request review of a patch before integrating.
+
+If we tried to integrate this patch with `gps int 0` it would fail because as a
+safety precaution it makes sure that the patch has an associated branch and
+that the patch in the stack and the one in the branch & remote branch match. It
+also runs the `integrate_verify` hook to make sure the integration should go
+forward.
+
+This can be overridden with the `-f` option as `gps int -f 0`.
 
 #### Isolation Verification
 
-The fist step in the integration process is to run the
-**isolation verification** if the configuration for it is enabled. For
-specifics on the configuration checkout the
-[Tool - Configuration chapter](../tool/configuration.md).
+The first step in the integration process is to run the **isolation
+verification** if the configuration for it is enabled. For specifics on the
+configuration checkout the [Configuration
+chapter](../tool/configuration.md).
 
 Isolation Verification is a process where a temporary branch is created that is
 based on the upstream base and the patch is cherry-picked into this branch.
@@ -56,20 +62,20 @@ This however does not verify the patch is truly independent because it doesn't
 address code dependencies. To address this the Isolation Verification process
 supports the `isolate_post_checkout` hook. This is a hook that if present gets
 executed after cherry-picking the patch into the temporary branch and checking
-that branch out. It allows you to provide an `isolate_post_checkout` hook
+that branch out. It allows you to provide a `isolate_post_checkout` hook
 script that can run linting, test suite, build process, etc. which can help
 verify that your patch is actually independent. Details on the hook can be
-found in the [Tool - Hooks chapter](../tool/hooks.md).
+found in the [Hooks chapter](../tool/hooks.md).
 
 #### Prompt for Reassurance
 
-Assuming the isolation verificatino was successful it then moves onto prompting
+Assuming the isolation verification was successful it then moves onto prompting
 the user for reassurance that they want to integrate the patch. This presents
 the details for the patch including the diff and then prompts the user to enter
 yes/no indicating if they want to continue with the integration.
 
 **Note:** This feature can be disabled/enabled via the configuration. More
-details can be found in the [Tool - Configuration chapter](../tool/configuration.md).
+details can be found in the [Configuration chapter](../tool/configuration.md).
 
 #### Patches Differ Check
 
@@ -101,17 +107,11 @@ done similar to the following if your stack was on `main`.
 git push origin origin/ps/rr/whatever-branch:main
 ```
 
-#### Update State
-
-After doing the actual integration into the upstream branch it then updates the
-local state store to indicate that the patch has been integrated.
-
 #### Cleanup Branches
 
-Beyond updating the local state it then cleans up the local and remote branches
-that were utilized during the request review and integration process. This
-branch cleanup can be prevented by passing the `-k` or `--keep-branch` option
-to the `gps int` command.
+Then it cleans up the local and remote branches that were utilized during the
+request review and integration process. This branch cleanup can be prevented by
+passing the `-k` or `--keep-branch` option to the `gps int` command.
 
 ### List
 
@@ -134,7 +134,7 @@ perform a pull as follows.
 gps pull
 ```
 
-This fetch the latest changes from upstream and rebase `main` on top of its
+This fetches the latest changes from upstream and rebase `main` on top of its
 upstream, in this case `origin/main`. During this process it detects patches
 that are already in `origin/main` and collapses them out of the patch stack.
 
@@ -146,7 +146,7 @@ will initiate a `gps pull` for you.
 
 This is useful if you don't care about seeing the `int` state of patches and
 just want them to collapse out of your stack as soon as they are integrated.
-See the [Tool - Configuration chapter](../tool/configuration.md) for more
+See the [Configuration chapter](../tool/configuration.md) for more
 details.
 
 That is how a patch is integrated.
