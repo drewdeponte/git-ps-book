@@ -7,15 +7,15 @@ upstream and have your stack replayed on top of the pulled patches.
 
 1. `gps pull`
 2. if conflict, resolve it
-3. if conflict, `gps add` resolved conflict files
-4. if conflict, `gps rebase --continue`
+3. if conflict, `git add` resolved conflict files
+4. if conflict, `git rebase --continue`
 5. repeat steps 2 to 4 for each conflicting patch
 
 ## WalkThrough
 
 The TL;DR section makes this feel trivial. And generally it is pretty trivial as you
 simply run `gps pull`, which effectively runs a `git fetch` to update your local
-repositories knowledge of the upstream repository's Git tree followed by a
+repository's knowledge of the upstream repository's Git tree followed by a
 `git rebase --onto <upstream-branch-name> <upstream-branch-name> <head-branch-shortname>`
 , e.g. `git rebase --onto origin/main origin/main main`.
 
@@ -67,9 +67,3 @@ concept.
 Once you have resolved the conflict and staged the change with `git add` you
 can continue the rebase process with `git rebase --continue` to have it pick
 back up from where it was paused.
-
-### Convenience Functions
-
-Git Patch Stack provides the `gps add` and `gps rebase --continue` commands as
-convenience mechanisms to help provide a complete abstraction so you don't have
-to bounce between Git and Git Patch Stack if you don't want to.
