@@ -5,7 +5,7 @@ to modify an existing patch. One common way of modifying an existing patch is
 to amend it.
 
 This is beneficial over adding a patch on top of the stack, reordering it into
-it's correct position, and squashing it because it makes it so that when you
+its correct position, and squashing it because it makes it so that when you
 are amending your patch it is based on the correct dependent code and not code
 that is only introduced higher up in the stack. It also has the benefit of
 forcing you to properly integrate changes higher up in the stack with your
@@ -25,14 +25,14 @@ sections below.
   you want to amend with `edit`, it will drop you out into the shell at that
   patch
 - make your changes to the code
-- `gps add` - stage changes you want to amend to the patch marked with `edit`
-- `gps a` - amend the current patch
-- `gps rebase --continue` - continue the rebase to play the other commits on
+- `git add` - stage changes you want to amend to the patch marked with `edit`
+- `git commit --amend` - amend the current patch
+- `git rebase --continue` - continue the rebase to play the other commits on
   top of the new commits you created
 
 ## Initial State
 
-For this example lets assume that we have a Patch Stack that has the following
+For this example let's assume that we have a Patch Stack that has the following
 patches. 
 
 ```
@@ -95,8 +95,8 @@ pick 87903c9 Add car() function
 #
 ```
 
-In the interactive rebase buffer we want change the action for the
-`Add foo() function` patch to `edit` so it is as follows.
+In the interactive rebase buffer we want to change the action for the `Add
+foo() function` patch to `edit`, so it is as follows.
 
 ```
 edit 20d08af Add foo() function
@@ -186,9 +186,9 @@ fn foo() {
 This is because those patches are above our current location in the stack.
 Which is exactly what we want.
 
-Then we stage the change with `gps add` or `git add` and amend the patch with
-`gps a` or `git commit --amend` as we normally would. After amending the patch
-if we look at the Git tree we will see the following.
+Then we stage the change with `git add` and amend the patch with `git commit
+--amend` as we normally would. After amending the patch if we look at the Git
+tree we will see the following.
 
 ```
 ✔ git la
@@ -211,7 +211,7 @@ To replay the rest of the patches on top of the new patch(es) we just created
 we simply run the following.
 
 ```
-gps rebase --continue
+git rebase --continue
 ```
 
 ### Potential Conflicts
