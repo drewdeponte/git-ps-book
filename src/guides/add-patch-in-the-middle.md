@@ -5,7 +5,7 @@ patches is being able to add a patch at a specific point in the middle of your
 stack.
 
 This is beneficial over adding a patch on top of the stack and reordering it
-into it's correct position because it makes it so that when you are creating
+into its correct position because it makes it so that when you are creating
 your patch it is based on the correct dependent code and not code that is only
 introduced higher up in the stack. It also has the benefit of forcing you to
 properly integrate changes higher up in the stack with your newly introduced
@@ -25,9 +25,9 @@ sections below.
   you want to add a new patch after with `edit`, it will drop you out into the
   shell at that patch
 - make your changes to the code
-- `gps add` - stage changes you want in the patch
-- `gps c` - create the patch
-- `gps rebase --continue` - continue the rebase to play the other commits on
+- `git add` - stage changes you want in the patch
+- `git commit` - create the patch
+- `git rebase --continue` - continue the rebase to play the other commits on
   top of the new commits you created
 
 ## Initial State
@@ -215,8 +215,8 @@ pick 3d490f8 Add car() function
 #
 ```
 
-In the interactive rebase buffer we want change the action for the
-`Add bar() function` patch to `edit` so it is as follows.
+In the interactive rebase buffer we want to change the action for the `Add
+bar() function` patch to `edit`, so it is as follows.
 
 ```
 pick 20d08af Add foo() function
@@ -253,9 +253,9 @@ pick 3d490f8 Add car() function
 ```
 
 When you save & quit the editor it will run the specified interactive rebase
-commands. In this case pick (meaning keep) the first patch and then stop on
-the second patch allowing for editing because we specified, `edit`. When it
-does this it will drop you back to the console with a message similar to the
+commands. In this case pick (meaning keep) the first patch and then stop on the
+second patch allowing for editing because we specified, `edit`. When it does
+this it will drop you back to the console with a message similar to the
 following:
 
 ```
@@ -270,7 +270,10 @@ Once you are satisfied with your changes, run
 
 ```
 
-**Note:** This drops you right after the patch (a.k.a. commit) that was marked for `edit` in the interactive rebase. We can see this if we look at the Git tree and look for `HEAD` as it shows which commit we are currently checked out on.
+**Note:** This drops you right after the patch (a.k.a. commit) that was marked
+for `edit` in the interactive rebase. We can see this if we look at the Git
+tree and look for `HEAD` as it shows which commit we are currently checked out
+on.
 
 ```
 ✔ git la
@@ -282,8 +285,8 @@ Once you are satisfied with your changes, run
 
 ### Add `foobar()` function patch
 
-Now that we know that we are in the middle of a rebase and we know where we are
-located in terms of the patches. We are ready to simply create a new patch
+Now that we know that we are in the middle of a rebase, and we know where we
+are located in terms of the patches. We are ready to simply create a new patch
 right where we are.
 
 When we open the `src/main.rs` file to add the new `foobar()` function we see
@@ -327,9 +330,9 @@ fn foobar() {
 }
 ```
 
-Then we stage the change with `gps add` or `git add` and create the patch with
-`gps c` or `git commit` as we normally would. After creating the patch if we
-look at the Git tree we will see the following.
+Then we stage the change with `git add` and create the patch with `git commit`
+as we normally would. After creating the patch if we look at the Git tree we
+will see the following.
 
 ```
 ✔ git la
@@ -406,7 +409,8 @@ fn car() {
 }
 ```
 
-We can resolve this by simply moving the `car()` definition down below `foobar()` and remove the conflict markers like so.
+We can resolve this by simply moving the `car()` definition down below
+`foobar()` and remove the conflict markers like so.
 
 ```
 fn main() {
@@ -431,8 +435,8 @@ fn car() {
 }
 ```
 
-Then we simply stage the conflict resolution state with `gps add` or `git add`
-and request it continue the rebase with `gps rebase --continue`.
+Then we simply stage the conflict resolution state with `git add` and request
+that it continue the rebase with `git rebase --continue`.
 
 Since we have resolved all the conflicts we see the following out.
 
@@ -443,7 +447,7 @@ Since we have resolved all the conflicts we see the following out.
 Successfully rebased and updated refs/heads/main.
 ```
 
-If we checkout our Patch Stack it will now look as follows.
+If we list our Patch Stack it will now look as follows.
 
 ```
 ✔ gps ls
