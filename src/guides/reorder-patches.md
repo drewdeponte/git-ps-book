@@ -1,7 +1,7 @@
 # Reorder patches
 
 One of the core concepts of Git Patch Stack is this idea of starting out with
-patches in an non-reviewable state and then iterating on them to get them to a
+patches in a non-reviewable state and then iterating on them to get them to a
 state where they are ready for review. As we iterate on various patches it is
 crucial to be able to reorder the patches on your stack so that the
 dependencies can be moved to the bottom of the stack.
@@ -15,13 +15,13 @@ dependencies can be moved to the bottom of the stack.
 ## WalkThrough
 
 The `gps rebase` command is a convenience function that really runs an
-interactive rebase of the stack on top of it's associated upstream, e.g.
-`git rebase -i --onto origin/main origin/main main`.
+interactive rebase of the stack on top of it's associated upstream, e.g. `git
+rebase -i --onto origin/main origin/main main`.
 
 So understanding how to reorder patches with this command is really simply
 learning how to reorder commits using git's interactive rebase.
 
-Lets start with the following patch stack (`gps ls`).
+Let's start with the following patch stack (`gps ls`).
 
 ```
 2           0317f6 Add function C
@@ -29,7 +29,7 @@ Lets start with the following patch stack (`gps ls`).
 0           32e6fd Add function A
 ```
 
-Lets say that function B needs to become a dependency of function A. In order
+Let's say that function B needs to become a dependency of function A. In order
 to put our stack into a state where we can actually iterate on function A
 adding B as a dependency we need to first reorder the patches so that "Add
 function B" is at the bottom of the stack.
@@ -111,7 +111,7 @@ pick 0317f6a Add function C
 #
 ```
 
-We then save and quit the editor and it reorders the commits as part of the
+We then save and quit the editor, and it reorders the commits as part of the
 rebase. This leaves our patch stack as follows (`gps ls`).
 
 ```
