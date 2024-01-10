@@ -3,7 +3,7 @@
 [Introduction](./introduction.md)
 
 - [Patch Stack Workflow](./patch-stack-workflow.md)
-- [Tool](./tool.md)
+- [CLI](./tool.md)
 	- [Design Principles](./tool/design-principles.md)
 	- [Installation](./tool/installation.md)
 	- [Hooks](./tool/hooks.md)
