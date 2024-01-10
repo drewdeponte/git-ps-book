@@ -20,7 +20,7 @@ interactive rebase of the stack on top of it's associated upstream, e.g.
 So understanding how to drop a patch with this command is really simply
 learning how to drop commits using git's interactive rebase.
 
-Lets start with the following patch stack (`gps ls`).
+Let's start with the following patch stack (`gps ls`).
 
 ```
 2           65a811 Add function C
@@ -28,8 +28,8 @@ Lets start with the following patch stack (`gps ls`).
 0           f79714 Add function A
 ```
 
-Lets say that "Add function B" is no longer need and we just want to get rid of
-it.
+Let's say that "Add function B" is no longer need and we just want to get rid
+of it.
 
 To do this we start by running `gps rebase` to kick off the interactive rebase.
 It presents the following in our configured editor.
