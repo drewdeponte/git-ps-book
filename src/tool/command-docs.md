@@ -17,7 +17,7 @@ switch with the command. Example:
 We also provide [man pages](https://en.wikipedia.org/wiki/Man_page) for the Git
 Patch Stack command line tool as well.
 
-The can be accessed as follows:
+They can be accessed as follows:
 
 	man gps-add
 
