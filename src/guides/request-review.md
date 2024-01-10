@@ -22,8 +22,8 @@ associated indices and statuses. An example of this looks as follows.
 
 ### Request Review
 
-In the example above lets say we wanted to request review of the "Add function
-A & function B" patch. We look and it's associated index is `0`. Therefore to
+In the example above let's say we wanted to request review of the "Add function
+A & function B" patch. We look and it's associated index is `0`. Therefore, to
 request review of this patch we simply run the following.
 
 ```
@@ -38,7 +38,7 @@ function B" patch.
 The fist step in the request review process is to run the
 **isolation verification** if the configuration for it is enabled. For
 specifics on the configuration checkout the
-[Tool - Configuration chapter](../tool/configuration.md).
+[Configuration chapter](../tool/configuration.md).
 
 Isolation Verification is a process where a temporary branch is created that is
 based on the upstream base and the patch is cherry-picked into this branch.
@@ -52,7 +52,7 @@ executed after cherry-picking the patch into the temporary branch and checking
 that branch out. It allows you to provide an `isolate_post_checkout` hook
 script that can run linting, test suite, build process, etc. which can help
 verify that your patch is actually independent. Details on the hook can be
-found in the [Tool - Hooks chapter](../tool/hooks.md).
+found in the [Hooks chapter](../tool/hooks.md).
 
 #### Request Review Branch Creation & Sync
 
@@ -68,9 +68,9 @@ review process.
 
 After syncing the request review branch if the `request_review_post_sync` hook
 is configured it will be executed. To find details about this hook and others
-check out the [Tool - Hooks chapter](../tool/hooks.md).
+check out the [Hooks chapter](../tool/hooks.md).
 
-This hook is commonly use to automate the creation of pull requests or create a
+This hook is commonly used to automate the creation of pull requests or create a
 patch email and send it to a mailing list so that all you have to do is a `gps
 rr <patch-index>` and it will take care of the entirety of requesting review of
 that patch.
