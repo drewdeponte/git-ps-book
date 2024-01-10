@@ -22,24 +22,20 @@ learning how to drop commits using git's interactive rebase.
 
 Let's start with the following patch stack (`gps ls`).
 
-```
-2           65a811 Add function C
-1           a876c2 Add function B
-0           f79714 Add function A
-```
+![Starting patch stack](../images/guides/drop-a-patch/starting-patch-stack.png)
 
-Let's say that "Add function B" is no longer need and we just want to get rid
+Let's say that "Add function B" is no longer need, and we just want to get rid
 of it.
 
 To do this we start by running `gps rebase` to kick off the interactive rebase.
 It presents the following in our configured editor.
 
 ```
-pick f797149 Add function A
-pick a876c29 Add function B
-pick 65a811a Add function C
+pick 57f6095 Add function A
+pick 1a7252c Add function B
+pick abf01ed Add function C
 
-# Rebase a34b62b..65a811a onto a34b62b (3 commands)
+# Rebase 016b6ec..abf01ed onto 016b6ec (3 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -56,9 +52,12 @@ pick 65a811a Add function C
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified); use -c <commit> to reword the commit message
+#         create a merge commit using the original merge commit's
+#         message (or the oneline, if no original merge commit was
+#         specified); use -c <commit> to reword the commit message
+# u, update-ref <ref> = track a placeholder for the <ref> to be updated
+#                       to this position in the new commits. The <ref> is
+#                       updated at the end of the rebase
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
@@ -69,7 +68,7 @@ pick 65a811a Add function C
 ```
 
 To drop the commit we simply mark it for dropping with either `d` or `drop`
-instead of it's default `pick`. If you forget the marking you can always
+instead of its default `pick`. If you forget the marking you can always
 reference the comment Git includes in the interactive rebase buffer. So in this
 case we mark the "Add function B" commit with `d` as follows.
 
@@ -78,11 +77,11 @@ bottom most commit on the stack is actually the top most commit. This can be
 confusing until you get used to it.
 
 ```
-pick f797149 Add function A
-d a876c29 Add function B
-pick 65a811a Add function C
+pick 57f6095 Add function A
+d 1a7252c Add function B
+pick abf01ed Add function C
 
-# Rebase a34b62b..65a811a onto a34b62b (3 commands)
+# Rebase 016b6ec..abf01ed onto 016b6ec (3 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -99,9 +98,12 @@ pick 65a811a Add function C
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified); use -c <commit> to reword the commit message
+#         create a merge commit using the original merge commit's
+#         message (or the oneline, if no original merge commit was
+#         specified); use -c <commit> to reword the commit message
+# u, update-ref <ref> = track a placeholder for the <ref> to be updated
+#                       to this position in the new commits. The <ref> is
+#                       updated at the end of the rebase
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
@@ -114,9 +116,6 @@ pick 65a811a Add function C
 We then save and quit the editor and it drops commits marked with `d` or `drop`
 as part of the rebase. This leaves our patch stack as follows (`gps ls`).
 
-```
-1           450768 Add function C
-0           f79714 Add function A
-```
+![Patch stack after drop](../images/guides/drop-a-patch/patch-stack-after-drop.png)
 
 Exactly the state we wanted it to be in.
