@@ -24,7 +24,7 @@ learning how to combine commits using git's interactive rebase.
 
 ### Initial State
 
-Lets start with the following patch stack (`gps ls`).
+Let's start with the following patch stack (`gps ls`).
 
 ```
 2           1d16f9 Add function C
@@ -34,7 +34,8 @@ Lets start with the following patch stack (`gps ls`).
 
 ### Mark Patches
 
-Lets say that we need to combine the "Add function A" and "Add function B" patches together to make a logical patch.
+Let's say that we need to combine the "Add function A" and "Add function B"
+patches together to make a logical patch.
 
 To do this we start by running `gps rebase` to kick off the interactive rebase.
 It presents the following in our configured editor.
@@ -73,10 +74,10 @@ pick 1d16f98 Add function C
 #
 ```
 
-To combine a patch with the patch above it we simply mark it for `squash` or
-`fixup` instead of it's default `pick`. If you forget the marking you can always
-reference the comment Git includes in the interactive rebase buffer. So in this
-case we mark the "Add function B" patch with `squash` as follows.
+To combine a patch with the patch above it, we simply mark it for `squash` or
+`fixup` instead of its default `pick`. If you forget the marking you can
+always reference the comment Git includes in the interactive rebase buffer. So
+in this case we mark the "Add function B" patch with `squash` as follows.
 
 *Note:* The stack is inverted when presented in an interactive rebase. So the
 bottom most commit on the stack is actually the top most commit. This can be
@@ -130,7 +131,7 @@ want to keep around.
 ### Choose a ps-id
 
 When you are combining patches you want to be aware that depending on what
-state your patches are in on, or the other, or both might have `ps-id`'s in
+state your patches are in, one, or the other, or both might have `ps-id`'s in
 their commit message. The `ps-id` in the commit message is how Git Patch Stack
 uniquely identifies patches and tracks and associates state to them.
 
