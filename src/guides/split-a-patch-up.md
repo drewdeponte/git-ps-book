@@ -14,7 +14,7 @@ process of taking code and splitting it up into logical chunks. This generally
 takes an understanding of the application architecture & the dependency
 relationship between the various elements.
 
-So lets get to it.
+So let's get to it.
 
 ## TL;DR
 
@@ -26,16 +26,16 @@ sections below.
   you want to split for `edit`, it will drop you out into the shell at that
   patch
 - `git reset HEAD^` - soft reset the patch
-- `gps add -p` - stage just the parts you want in the first patch
-- `gps c` - create the first patch
-- `gps add -p` - stage just the parts you want in the next patch
-- `gps c` - create the next patch
-- `gps rebase --continue` - continue the rebase to play the other commits on
+- `git add -p` - stage just the parts you want in the first patch
+- `git commit` - create the first patch
+- `git add -p` - stage just the parts you want in the next patch
+- `git commit` - create the next patch
+- `git rebase --continue` - continue the rebase to play the other commits on
   top of the new commits you created
 
 ## Initial State
 
-For this example lets assume that we have a Patch Stack that has the following
+For this example let's assume that we have a Patch Stack that has the following
 patches. 
 
 ```
@@ -281,7 +281,7 @@ pick aaaba12 Add first paragraph to README.md
 When you save & quit the editor it will run the specified interactive rebase
 commands. In this case pick (meaning keep) the first patch and then stop on
 the second patch allowing for editing because we specified, `edit`. When it
-does this will drop you back to the console with a message similar to the
+does this, it will drop you back to the console with a message similar to the
 following:
 
 ```
@@ -330,7 +330,7 @@ As we can see we now have the changes that add both the subtitle & the
 description locally.
 
 So we first want to stage a patch with just the `## Subtitle` portion. To do
-this we need to use `gps add -p README.md` to do a partial stage of the README
+this we need to use `git add -p README.md` to do a partial stage of the README
 files changes to just stage the `## Subtitle` portion. See this post, [git add
 patch won't split](https://drewdeponte.com/blog/git-add-patch-wont-split/) for
 details on how to accomplish this. This should leave us with the following.
@@ -340,7 +340,8 @@ details on how to accomplish this. This should leave us with the following.
 +Description of the README
 ```
 
-If you run `gps s` to check on things at this point it should look like this.
+If you run `git status` to check on things at this point it should look like
+this.
 
 ```
 ✔ gps s
@@ -396,21 +397,22 @@ index b612c4b..b8c4d95 100644
 +Here is the description
 ```
 
-Yep looks like they do. So now we just need create the first of the two patches
-that will replace the patch we marked for edit. This can be done as follows.
+Yep looks like they do. So now we just need to create the first of the two
+patches that will replace the patch we marked for edit. This can be done as
+follows.
 
 ```
-gps c
+git commit
 ```
 
 When it opens the editor for the message we can give it a summary of
 `Add subtitle to README`.
 
-From there we can stage the rest of the changes with `gps add README.md` and
+From there we can stage the rest of the changes with `git add README.md` and
 create the second patch with the following.
 
 ```
-gps c
+git commit
 ```
 
 When it opens the editor for the message we can give it a summary of
@@ -423,7 +425,7 @@ now need to instruct it to finish the interactive rebase that we started with
 the edit. This is done as follows.
 
 ```
-gps rebase --continue
+git rebase --continue
 ```
 
 Once it is complete if we checkout our Patch Stack it will look as follows.
