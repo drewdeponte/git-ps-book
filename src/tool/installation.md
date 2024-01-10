@@ -1,14 +1,12 @@
 # Installation
 
 As Git Patch Stack is written in [Rust][] it can be compiled and installed on
-many different platforms. However, currently we only provide package management
-of it on macOS. So if you are on another platform you will have to follow the
-**Build from Source** instructions below.
+many different platforms. Currently, we provide package management via
+[Homebrew][] on macOS and [Cargo][] on all platforms. If you don't like either
+of those package managers you will have to follow the **Build from Source**
+instructions below.
 
-**Note:** In order to use the `request-review` command you **must** set up the
-`request_review_post_sync` [hook](/tool/hooks.md) after installation.
-
-### macOS
+### Install on macOS via Homebrew
 
 To install on macOS we provide a [Homebrew][] tap which provides the
 `git-ps-rs` formula. To use it first you need to add the tap as follows.
@@ -29,9 +27,9 @@ your version of the Git Patch Stack command line tool as follows.
 
 #### zsh & bash Completions
 
-Our [Homebrew][] formula installs the zsh & bash completion scripts into the
+Our [Homebrew][] formula installs the `zsh` & `bash` completion scripts into the
 standard [Homebrew][] shell completions location. So you just need to make sure
-that path is configured in your shell configuration. For zsh it is generally
+that path is configured in your shell configuration. For `zsh` it is generally
 something like the following:
 
 	# add the Homebrew zsh completion scripts folder so it will be searched
@@ -40,14 +38,20 @@ something like the following:
 	autoload -Uz compinit
 	compinit
 
+### Install on all platforms via Cargo
+
+To install the Git Patch Stack command line tool via [Cargo][] simply run the
+following command.
+
+	cargo add gps
+
 ### Build from Source
 
-If you are on a platform other than macOS or you just want to build from source
+If you don't like either package manager or you just want to build from source
 don't fret. You will just have to make sure you have the following build
 dependencies installed.
 
 - [Rust][] (macOS: `brew install rust`)
-- gpgme (macOS: `brew install gpgme`, Ubuntu: `apt-get install -y libgpgme-dev`)
 
 Once you have the build dependencies installed all you should need to do is
 run the following command to build the release version of the command line
@@ -61,8 +65,9 @@ Once you have built it successfully you can use the `mv` command to move the
 
 #### zsh & bash completions
 
-The zsh and bash completion scripts are generated as part of the build process
-by [Cargo][]'s custom build script, `build.rs` at the root of the project.
+The `zsh` and `bash` completion scripts are generated as part of the build
+process by [Cargo][]'s custom build script, `build.rs` at the root of the
+project.
 
 The scripts are output to the [Cargo -
 OUT_DIR](https://doc.rust-lang.org/cargo/reference/environment-variables.html)
