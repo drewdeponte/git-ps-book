@@ -27,31 +27,21 @@ later on as part of the Git history.
 ## Request Review of Series
 
 Once you have built up your patch series of finalized patches. We need to
-create a pull request of that patch series. The best process at the moment to
-do this with Git Patch Stack is the following.
+request review of that patch series. The most direct process to do this with
+Git Patch Stack is the following.
 
 1. build up your series of finalized patches in your stack
-2. create and push branch containing copy of your patch series - e.g. `gps branch -p 1 3`
-3. open a Pull Request in whatever source control management tool you are using
+2. request review of the patch series - e.g. `gps rr 1-3`
 
-*Note:* The `gps branch` command allows you to pass the `-n your-branch-name`
-switch to it if you want to control the name of the branch created. Also, there
-is a configuration option within the `branch` command section called
-`push_to_remote` that can be set, so you don't have to pass the `-p` switch on
-the command line to have it push to remote. See
-[Configuration](configuration.md) for details.
+*Note:* The `gps request-review` command allows you to pass the `-n
+your-branch-name` switch to it if you want to control the name of the branch
+created.
 
 ## Deal with Feedback
 
-Often times you will get feedback on your Pull Request when it is reviewed. To
-address this process is generally as follows.
+Often times you will get feedback on your Pull Request when it is reviewed. You can address this using the following.
 
 1. update the patches in your patch stack to address the feedback
-2. overwrite local branch with updated patch series - e.g. `gps branch -p 1 3`
-3. comment on the Pull Request letting the reviewer know what changes you have addressed and that they have been pushed up
-
-## The Future
-
-Discussions are currently being had around how best to include the concept of a
-series of patches into the `request-review` command. Doing so would provide the
-same functionality but with the benefit of state tracking.
+2. re-request review of the patch series - e.g. `gps rr 1-3`
+3. comment on the Pull Request letting the reviewer know what changes you have
+   addressed and that they have been pushed up
