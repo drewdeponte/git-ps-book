@@ -2,7 +2,7 @@
 
 [Introduction](./introduction.md)
 
-- [Conceptual Model](./conceptual-model.md)
+- [Patch Stack Workflow](./patch-stack-workflow.md)
 - [Tool](./tool.md)
 	- [Design Principles](./tool/design-principles.md)
 	- [Installation](./tool/installation.md)
