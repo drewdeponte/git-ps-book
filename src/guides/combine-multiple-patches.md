@@ -26,11 +26,7 @@ learning how to combine commits using git's interactive rebase.
 
 Let's start with the following patch stack (`gps ls`).
 
-```
-2           1d16f9 Add function C
-1           6c8104 Add function B
-0           c6f715 Add function A
-```
+![Initial patch stack](../images/guides/combine-patches/initial-patch-stack.png)
 
 ### Mark Patches
 
@@ -41,11 +37,11 @@ To do this we start by running `gps rebase` to kick off the interactive rebase.
 It presents the following in our configured editor.
 
 ```
-pick c6f7155 Add function A
-pick 6c81046 Add function B
-pick 1d16f98 Add function C
+pick 340a171 Add function A
+pick 00e9082 Add function B
+pick c1b3634 Add function C
 
-# Rebase a34b62b..1d16f98 onto a34b62b (3 commands)
+# Rebase 016b6ec..c1b3634 onto 016b6ec (3 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -62,9 +58,12 @@ pick 1d16f98 Add function C
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified); use -c <commit> to reword the commit message
+#         create a merge commit using the original merge commit's
+#         message (or the oneline, if no original merge commit was
+#         specified); use -c <commit> to reword the commit message
+# u, update-ref <ref> = track a placeholder for the <ref> to be updated
+#                       to this position in the new commits. The <ref> is
+#                       updated at the end of the rebase
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
@@ -84,11 +83,11 @@ bottom most commit on the stack is actually the top most commit. This can be
 confusing until you get used to it.
 
 ```
-pick c6f7155 Add function A
-squash 6c81046 Add function B
-pick 1d16f98 Add function C
+pick 340a171 Add function A
+squash 00e9082 Add function B
+pick c1b3634 Add function C
 
-# Rebase a34b62b..1d16f98 onto a34b62b (3 commands)
+# Rebase 016b6ec..c1b3634 onto 016b6ec (3 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -105,9 +104,12 @@ pick 1d16f98 Add function C
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified); use -c <commit> to reword the commit message
+#         create a merge commit using the original merge commit's
+#         message (or the oneline, if no original merge commit was
+#         specified); use -c <commit> to reword the commit message
+# u, update-ref <ref> = track a placeholder for the <ref> to be updated
+#                       to this position in the new commits. The <ref> is
+#                       updated at the end of the rebase
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
@@ -145,13 +147,10 @@ combined patch.
 
 ### Confirm Rebase
 
-We then save and quit the editor and it combines the patches marked with
+We then save and quit the editor, and it combines the patches marked with
 `squash` or `fixup` as part of the rebase. This leaves our patch stack as
 follows (`gps ls`).
 
-```
-1           8a6145 Add function C
-0           ba2f4d Add function A & function B
-```
+![Final patch stack](../images/guides/combine-patches/final-patch-stack.png)
 
 Exactly the state we wanted it to be in.
