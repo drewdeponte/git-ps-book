@@ -14,16 +14,12 @@ integrate and get its associated index. The best way to do this is to simply
 run `gps ls` to list out the patches in the stack with their associated indices
 and statuses. An example of this looks as follows.
 
-```
-✔ gps ls
-1           8ce58e Add bar() function
-0           0a301d Add foo() function
-```
+![Initial patch stack](../images/guides/integrate/initial-patch-stack.png)
 
 ### Integrate
 
 In the example above lets say we wanted to integrate the `Add foo() function`
-patch. We look and it's associated index is `0` and then run the following to
+patch. We look, and it's associated index is `0` and then run the following to
 trigger the integration.
 
 ```
@@ -87,16 +83,6 @@ is different than you think.
 
 **Note:** `gps ls` will show you if your patches differ.
 
-#### Patch is Behind Check
-
-Then it checks to see if the patch in the patch stack is behind the remote
-patch. This could occur if someone pushed up a change to the remote branch or
-force pushed it. This is useful to know so that you can address the difference
-and get the patch in your patch stack in sync with the remote prior to
-integrating.
-
-**Note:** `gps ls` will show you if your patch is behind.
-
 #### Actually Integrate
 
 Assuming the above checks pass the next step in the integration process is
@@ -115,38 +101,23 @@ passing the `-k` or `--keep-branch` option to the `gps int` command.
 
 ### List
 
-Now that the integration is complete we can check on the status of things again
-with `gps ls`.
+Now that the integration is complete we can run `gps ls` to see the state of things again.
 
-```
-✔ gps ls
-1           8ce58e Add bar() function
-0    int    0a301d Add foo() function
-```
+![Initial patch stack](../images/guides/integrate/initial-patch-stack.png)
 
-### Collapse Integrated Patches
+You might have noticed that it is exactly the same as the initial `gps ls`
+output. This is because Git itself has no way of knowing yet that the
+integration has happened.
 
-Now that patch is integrated so you likely don't want it in your stack of
-patches anymore. To collapse integrated patches out of the stack we simply
-perform a pull as follows.
+So if you do a `gps pull` to pull down the latest state from upstream and run
+`gps ls` again. You will notice that the patch that was integrated is no longer
+in your stack. This is because Git detected it was integrated and removed it
+from the stack for you.
 
-```
-gps pull
-```
-
-This fetches the latest changes from upstream and rebase `main` on top of its
-upstream, in this case `origin/main`. During this process it detects patches
-that are already in `origin/main` and collapses them out of the patch stack.
-
-### Pull after Integrate
-
-If the integration process completed successfully and the
-`integrate.pull_after_integrate` configuration value is set to `true` then it
-will initiate a `gps pull` for you.
-
-This is useful if you don't care about seeing the `int` state of patches and
-just want them to collapse out of your stack as soon as they are integrated.
-See the [Configuration chapter](../tool/configuration.md) for more
-details.
+**Note:** There is a configuration option for the `integrate` command that when
+enabled will cause the integrate command to run a `gps pull` for you when it
+was successful. This will make it so this awkward state where you still have
+the integrated patch in your stack isn't observable anymore. More details can
+be found in the [Configuration chapter](../tool/configuration.md).
 
 That is how a patch is integrated.
