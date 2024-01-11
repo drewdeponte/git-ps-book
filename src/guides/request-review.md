@@ -14,11 +14,7 @@ want to request review of and get its associated index. The best way to do this
 is to simply run `gps ls` to list out the patches in the stack with their
 associated indices and statuses. An example of this looks as follows.
 
-```
-✔ gps ls
-1           8a6145 Add function C
-0           ba2f4d Add function A & function B
-```
+![Initial patch stack](../images/guides/request-review/initial-patch-stack.png)
 
 ### Request Review
 
@@ -35,7 +31,7 @@ function B" patch.
 
 #### Isolation Verification
 
-The fist step in the request review process is to run the
+The first step in the request review process is to run the
 **isolation verification** if the configuration for it is enabled. For
 specifics on the configuration checkout the
 [Configuration chapter](../tool/configuration.md).
