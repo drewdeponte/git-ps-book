@@ -13,10 +13,7 @@ In this example let's assume that we have a simple patch stack consisting of a
 single patch. If we run `gps ls` it looks as follows because we have already
 requested review of our patch.
 
-```
-✔ gps ls
-0 rr         0a301d Add foo() function
-```
+![Initial patch stack](../images/guides/absorb-changes/initial-patch-stack.png)
 
 ### Discover Changes
 
@@ -33,11 +30,7 @@ have already done as that is more work.
 So we `git cherry-pick 5bca34` to cherry-pick the change down into our patch
 stack. Now if we run `gps ls` our patch stack looks as follows.
 
-```
-✔ gps ls
-1           8ce58e Add bar() function
-0 rr        0a301d Add foo() function
-```
+![gps ls after cherry-pick](../images/guides/absorb-changes/gps-ls-after-cherry-pick.png)
 
 ### Absorb Changes
 
@@ -57,7 +50,7 @@ individually with `gps rr` and `gps rr` our originally patch, adding a comment
 on the PR to explicitly communicate the decision to keep them separate.
 
 The last option would be that we chose to keep them separate but as part of a
-patch series. In which case we would use the `gps rr 0-1` command to re-request
-review.
+patch series. In which case we would use the `gps rr -n foo 0-1` command to
+re-request review.
 
 That is it! We just absorbed the change that was pushed up.
