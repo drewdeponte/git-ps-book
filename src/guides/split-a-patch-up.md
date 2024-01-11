@@ -38,118 +38,22 @@ sections below.
 For this example let's assume that we have a Patch Stack that has the following
 patches. 
 
-```
-2           aaaba1 Add first paragraph to README.md
-1           e2e6a6 Add README.md subtitle & description
-0           5a3538 Add Readme Title
-```
+![Initial patch stack](../images/guides/split-a-patch/initial-patch-stack.png)
 
 As we can see from the first patch `Add Readme Title`, it adds the title to the
 README.
 
-```
-✔ gps show 0
-commit 5a3538336bfa070648f4a221dd66f58d171e0372
-tree ae384913fa2fd8ae03b4509817e78b8d6dc3677c
-parent a34b62b61d1675073eb1df953f1cdfc01232cceb
-author Drew De Ponte <cyphactor@gmail.com> 1656473449 -0400
-committer Drew De Ponte <cyphactor@gmail.com> 1656473449 -0400
-gpgsig -----BEGIN PGP SIGNATURE-----
-
- iQEzBAABCAAdFiEEZ4qmf6cBz6fWZrzoQcXSxuWvlEwFAmK7x28ACgkQQcXSxuWv
- lEwG4gf/TAyEypLa/yzKcOO791jL1ew0jGS1ZzaJjQHRYkdNte3jZK/703wDrJX5
- HGR/csZnpR7LV7FByeaCWzoXPtIiIr/lQ89xEHk+E8BpGKkcgxVGgF27BFJ/vAHh
- LGEgbgbHNHDvesoyt85oN7trfvKbI7sm8p4NYL9rLb4rovy/2x5VMSOGvHjKL5Rn
- eTCWv9AuQxVjvphZgoAa2RwPP9fWzToy8CVO2uwbXBptlzEGm9s7Rsz4J4Q3WwHk
- FPAMDIlJlmpn6bPFlY7V5hnt/JT4Qkysk/nCisfQ8OwmQ7ZAhv0qwAKe4eor2OI6
- +0sR5IHqUXkXv0EEuCr8Td3W2I9G9A==
- =VlR/
- -----END PGP SIGNATURE-----
-
-    Add Readme Title
-
-diff --git a/README.md b/README.md
-new file mode 100644
-index 0000000..db58698
---- /dev/null
-+++ b/README.md
-@@ -0,0 +1 @@
-+# Readme Title
-```
+![gps show 0](../images/guides/split-a-patch/gps-show-0.png)
 
 The second patch, `Add README.md subtitle & description`, adds the
 subtitle and the description as seen in the diff below.
 
-```
-✔ gps show 1
-commit e2e6a6f470651b6a32940f57eba74582ac26fcca
-tree 527436c6fdac33c0944aeb659f127ad12523a768
-parent 5a3538336bfa070648f4a221dd66f58d171e0372
-author Drew De Ponte <cyphactor@gmail.com> 1656473483 -0400
-committer Drew De Ponte <cyphactor@gmail.com> 1656473483 -0400
-gpgsig -----BEGIN PGP SIGNATURE-----
-
- iQEzBAABCAAdFiEEZ4qmf6cBz6fWZrzoQcXSxuWvlEwFAmK7x5YACgkQQcXSxuWv
- lExNrggA2NEk3q8PqdyLcLN8wYN1QDo95HEbncjI1JrGKp8R+jbU5z5XxXM5LPgY
- lyq0fsViJjEMswZajNWeM9BaQ0drNrs6GK5B/1cgjlcZkkC41zvNNcDQdYOYZr9c
- pbriYf9VVXeX8l9FzjeZEGmdzCIZi1wKu6WovKFNx1bNHtTND3RQkrD8zWkHajKp
- I6HsN62Wr7u4hZPa0tqXzyfqPQZ6cSXuikCzoZLbWha1Fq2q3aVyTsazW3zMsXm6
- 8jpEc+vge3GDDKVt+m9Tn1XrW//u13q+pyBJ44UxGsb4q6to7LetN+ttbAyCYvbZ
- ws4Thz4bwjFvV9eONMbtR3VhnH4UDg==
- =nFgy
- -----END PGP SIGNATURE-----
-
-    Add README.md subtitle & description
-
-diff --git a/README.md b/README.md
-index db58698..b8c4d95 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,5 @@
- # Readme Title
-+
-+## Subtitle
-+
-+Here is the description
-```
+![gps show 1](../images/guides/split-a-patch/gps-show-1.png)
 
 The third patch, `Add first paragraph to README.md` adds the first paragraph in
 the diff below.
 
-```
-✔ gps show 2
-commit aaaba12cb36e3239b90703a6777c9ee66a1ced14
-tree f5ba2770179a826bb0fb63cf33dd2c6952812adf
-parent e2e6a6f470651b6a32940f57eba74582ac26fcca
-author Drew De Ponte <cyphactor@gmail.com> 1656473563 -0400
-committer Drew De Ponte <cyphactor@gmail.com> 1656473563 -0400
-gpgsig -----BEGIN PGP SIGNATURE-----
-
- iQEzBAABCAAdFiEEZ4qmf6cBz6fWZrzoQcXSxuWvlEwFAmK7x+MACgkQQcXSxuWv
- lEwVBQgAnQl7Gzl6X4J0rz1eOVpLweO1tWCp7ScrzHiWStvNUuSNpJ8sayJAcD5E
- n97CZ/olOUcC0qo+yWWOv5qSqt+zxPIgh3bCiN7FtMdGyNcr8wS6Ph4H6ZYKV0Re
- J2jFvm7//8h6KxwUVvW7OPz+CFnVrSSNjF4etvmwDReyFo63TJZepczUCSsGUKvy
- 0PtXU2ixyvbLctVfj6XhSe/3pkAKv04H88/4lX8f+GYN7Sh/Ml4wQ6gXYSyv7S5X
- vmmu7neYuwBQXF5HlCGJn72xJIEZJBKGoDkT3LdtKyiSVhdgl27Fb+9NbzkIs5e9
- TN0sCffFdMiPRrVPwaeKLfAU7zbQEQ==
- =kFns
- -----END PGP SIGNATURE-----
-
-    Add first paragraph to README.md
-
-diff --git a/README.md b/README.md
-index b8c4d95..2ebe963 100644
---- a/README.md
-+++ b/README.md
-@@ -3,3 +3,7 @@
- ## Subtitle
-
- Here is the description
-+
-+## First Paragraph
-+
-+Here is the first paragraph.
-```
+![gps show 2](../images/guides/split-a-patch/gps-show-2.png)
 
 ## Non-Logically Structured Patch
 
@@ -158,38 +62,7 @@ second commit, `Add README.md subtitle & description` is actually
 doing two logical things. First it is adding the subtitle. Secondly it is
 adding the description to the README.
 
-```
-✔ gps show 1
-commit e2e6a6f470651b6a32940f57eba74582ac26fcca
-tree 527436c6fdac33c0944aeb659f127ad12523a768
-parent 5a3538336bfa070648f4a221dd66f58d171e0372
-author Drew De Ponte <cyphactor@gmail.com> 1656473483 -0400
-committer Drew De Ponte <cyphactor@gmail.com> 1656473483 -0400
-gpgsig -----BEGIN PGP SIGNATURE-----
-
- iQEzBAABCAAdFiEEZ4qmf6cBz6fWZrzoQcXSxuWvlEwFAmK7x5YACgkQQcXSxuWv
- lExNrggA2NEk3q8PqdyLcLN8wYN1QDo95HEbncjI1JrGKp8R+jbU5z5XxXM5LPgY
- lyq0fsViJjEMswZajNWeM9BaQ0drNrs6GK5B/1cgjlcZkkC41zvNNcDQdYOYZr9c
- pbriYf9VVXeX8l9FzjeZEGmdzCIZi1wKu6WovKFNx1bNHtTND3RQkrD8zWkHajKp
- I6HsN62Wr7u4hZPa0tqXzyfqPQZ6cSXuikCzoZLbWha1Fq2q3aVyTsazW3zMsXm6
- 8jpEc+vge3GDDKVt+m9Tn1XrW//u13q+pyBJ44UxGsb4q6to7LetN+ttbAyCYvbZ
- ws4Thz4bwjFvV9eONMbtR3VhnH4UDg==
- =nFgy
- -----END PGP SIGNATURE-----
-
-    Add README.md subtitle & description
-
-diff --git a/README.md b/README.md
-index db58698..b8c4d95 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,5 @@
- # Readme Title
-+
-+## Subtitle
-+
-+Here is the description
-```
+![gps show 1](../images/guides/split-a-patch/gps-show-1.png)
 
 Instead of the above what we really wanted to have was one patch that adds
 the subtitle and a separate patch that adds the description as two isolated
@@ -199,7 +72,7 @@ logical chunks.
 
 To accomplish this we need to utilize an interactive rebase to enter "edit"
 mode in the correct place in the Patch Stack. In this particular case we
-want to rebase our Patch Stack.
+want to rebase our Patch Stack with the following.
 
 ```
 gps rebase
@@ -208,11 +81,11 @@ gps rebase
 This will bring up the following in your editor.
 
 ```
-pick 5a35383 Add Readme Title
-pick e2e6a6f Add README.md subtitle & description
-pick aaaba12 Add first paragraph to README.md
+pick d03d4fc Add Readme Title
+pick 9efd74b Add README.md subtitle & description
+pick 6b024c2 Add first paragraph to README.md
 
-# Rebase a34b62b..aaaba12 onto a34b62b (3 commands)
+# Rebase 016b6ec..6b024c2 onto 016b6ec (3 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -229,9 +102,12 @@ pick aaaba12 Add first paragraph to README.md
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified); use -c <commit> to reword the commit message
+#         create a merge commit using the original merge commit's
+#         message (or the oneline, if no original merge commit was
+#         specified); use -c <commit> to reword the commit message
+# u, update-ref <ref> = track a placeholder for the <ref> to be updated
+#                       to this position in the new commits. The <ref> is
+#                       updated at the end of the rebase
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
@@ -245,11 +121,11 @@ In the interactive rebase buffer we can change the action for the middle patch
 to `edit` so it as follows.
 
 ```
-pick 5a35383 Add Readme Title
-edit e2e6a6f Add README.md subtitle & description
-pick aaaba12 Add first paragraph to README.md
+pick d03d4fc Add Readme Title
+edit 9efd74b Add README.md subtitle & description
+pick 6b024c2 Add first paragraph to README.md
 
-# Rebase a34b62b..aaaba12 onto a34b62b (3 commands)
+# Rebase 016b6ec..6b024c2 onto 016b6ec (3 commands)
 #
 # Commands:
 # p, pick <commit> = use commit
@@ -266,9 +142,12 @@ pick aaaba12 Add first paragraph to README.md
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
-# .       create a merge commit using the original merge commit's
-# .       message (or the oneline, if no original merge commit was
-# .       specified); use -c <commit> to reword the commit message
+#         create a merge commit using the original merge commit's
+#         message (or the oneline, if no original merge commit was
+#         specified); use -c <commit> to reword the commit message
+# u, update-ref <ref> = track a placeholder for the <ref> to be updated
+#                       to this position in the new commits. The <ref> is
+#                       updated at the end of the rebase
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
@@ -285,7 +164,7 @@ does this, it will drop you back to the console with a message similar to the
 following:
 
 ```
-Stopped at e2e6a6f...  Add README.md subtitle & description
+Stopped at 9efd74b...  Add README.md subtitle & description
 You can amend the commit now, with
 
   git commit --amend '-S'
@@ -312,19 +191,7 @@ git reset HEAD^
 Now if we run `git diff` to see the now local unstaged changes we see the
 following.
 
-```
-✔ git di
-diff --git a/README.md b/README.md
-index db58698..b8c4d95 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,5 @@
- # Readme Title
-+
-+## Subtitle
-+
-+Here is the description
-```
+![git diff of unstaged changes](../images/guides/split-a-patch/git-diff-unstaged-changes.png)
 
 As we can see we now have the changes that add both the subtitle & the
 description locally.
@@ -343,59 +210,17 @@ details on how to accomplish this. This should leave us with the following.
 If you run `git status` to check on things at this point it should look like
 this.
 
-```
-✔ gps s
-interactive rebase in progress; onto a34b62b
-Last commands done (2 commands done):
-   pick 5a35383 Add Readme Title
-   edit e2e6a6f Add README.md subtitle & description
-Next command to do (1 remaining command):
-   pick aaaba12 Add first paragraph to README.md
-  (use "git rebase --edit-todo" to view and edit)
-You are currently splitting a commit while rebasing branch 'main' on 'a34b62b'.
-  (Once your working directory is clean, run "git rebase --continue")
-
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        modified:   README.md
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   README.md
-```
+![git status](../images/guides/split-a-patch/git-status-output.png)
 
 If we specifically check out the staged changes with `git diff --staged` we get
 the following.
 
-```
-✔ git diff --staged
-diff --git a/README.md b/README.md
-index db58698..b612c4b 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,3 @@
- # Readme Title
-+
-+## Subtitle
-```
+![git diff staged changes](../images/guides/split-a-patch/git-diff-staged-after-split.png)
 
-This is exactly what we wanted. But lets make sure the unstaged changes also
+This is exactly what we wanted. But let's make sure the unstaged changes also
 represent what we want by running `git diff`.
 
-```
-✔ git diff
-diff --git a/README.md b/README.md
-index b612c4b..b8c4d95 100644
---- a/README.md
-+++ b/README.md
-@@ -1,3 +1,5 @@
- # Readme Title
-
- ## Subtitle
-+
-+Here is the description
-```
+![git diff unstaged changes](../images/guides/split-a-patch/git-diff-unstaged-after-split.png)
 
 Yep looks like they do. So now we just need to create the first of the two
 patches that will replace the patch we marked for edit. This can be done as
@@ -428,14 +253,8 @@ the edit. This is done as follows.
 git rebase --continue
 ```
 
-Once it is complete if we checkout our Patch Stack it will look as follows.
+Once it is complete if we check out our Patch Stack it will look as follows.
 
-```
-✔ gps ls
-3           023326 Add first paragraph to README.md
-2           8a7fdc Add description to README
-1           5aaf4c Add subtitle to README
-0           5a3538 Add Readme Title
-```
+![Final patch stack](../images/guides/split-a-patch/final-patch-stack.png)
 
 Exactly what we wanted!
