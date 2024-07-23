@@ -67,4 +67,4 @@ and integrating patches which aids with creating code changes that are easy to
 review, aligned with the application architecture, scoped logically, facilitate
 efficient development, and support long term software maintainability.
 
-[Journey to Small Pull Requests]: https://engineering.uptechstudio.com/blog/journey-to-small-pull-requests/ 
+[Journey to Small Pull Requests]: https://drewdeponte.com/blog/journey-to-small-pull-requests/
